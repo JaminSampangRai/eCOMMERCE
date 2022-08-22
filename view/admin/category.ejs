@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body>
+    <section class="w-[100%] flex justify-center">
+        <form
+          class="w-[85%] flex flex-col gap-2 bg-gray-200 p-[2em] m-3 rounded md:w-[50%] lg:w-[45%] xl:w-[35%]"
+          action=""
+          method="POST"
+        >
+          <div class="flex flex-col gap-1">
+            <label class="text-[1.1rem]" for="category">Category</label>
+            <input
+              class="border-2 h-[2.2em] pl-2 rounded md:h-[2.5em] focus:outline-sky-300"
+              type="text"
+              name="category"
+              placeholder="Enter category"
+            />
+          </div>
+          <div class="flex flex-col gap-1">
+            <label class="text-[1.1rem]" for="name">Sub Category</label>
+            <input
+              class="border-2 h-[2.2em] pl-2 rounded md:h-[2.5em] focus:outline-sky-300"
+              type="text"
+              name="subCategory"
+              placeholder="Enter sub category"
+            />
+          </div>
+          <button
+            class="bg-gray-500 rounded-lg h-[2em] font-semibold text-white hover:bg-gray-400 hover:text-gray-500"
+            type="submit"
+          >
+            Submit
+          </button>
+        </form>
+      </section>
+    
+</body>
+</html>
