@@ -2,15 +2,16 @@ const Product = require('../../model/product')
 const productsCategory = require('./../../model/product_Category')
 
 exports.getAddproduct = (req,res) => {
-    // Product.find().populate("category").exec((err, data) => {
-    //     console.log(data)
-    //     // res.render('admin/add_product',{data})
-    //     res.send({data})
-    // })   
-    Product.find().populate("category").
-        then(data => {
-            res.status(200).send({ data, status: 200 })
-        })
+    Product.find().populate("category").exec((err, data) => {
+        // console.log(data)
+        res.render('admin/add_product',{data})
+        // res.send({data})
+    })  
+
+    // Product.find().populate("category").
+    //     then(data => {
+    //         res.status(200).send({ data, status: 200 })
+    //     })
 }
 
 //get products via API

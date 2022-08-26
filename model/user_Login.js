@@ -17,10 +17,12 @@ const userSchema = new schema({
     },
     isRole: {
         type: String,
-        required: true,
+        required: false,
     },
-}, {
+}, 
+{
     timestamps: true,
-});
+}
+);
 
 module.exports = mongoose.model("User", userSchema);

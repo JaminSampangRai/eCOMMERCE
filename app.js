@@ -61,16 +61,20 @@ const allproductRoute = require('./routes/admin/allproducts')
 app.use('/admin',allproductRoute)
 
 //using route for update product and delete
-const updateproductRoute = require('./routes/admin/edit_product')
+const updateproductRoute =require('./routes/admin/edit_product')
 app.use('/admin',updateproductRoute)
 
 //using router for login
-const loginRoute = require('./routes/admin/edit_product')
-app.use('/user',loginRoute)
+// const loginRoute = require('./routes/admin/edit_product')
+// app.use('/',loginRoute)
 
 //using router for category
 const categoryRoute = require('./routes/admin/edit_product')
 app.use('/category',categoryRoute)
+
+//using signup and login route
+const userAuth = require('./routes/admin/userauth')
+app.use("/user", userAuth) 
 
 app.use(adminSeeder)
 

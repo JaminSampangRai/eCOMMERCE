@@ -1,9 +1,9 @@
 const productsCategory = require('./../../model/product_Category')
 
 //Product Category
-// exports.getProductCategory = (req,res) => {
-//     res.render("admin/category")
-// }
+exports.getProductCategory = (req,res) => {
+    res.render("admin/category")
+}
 
 
 // Get all categories 
@@ -11,8 +11,8 @@ const productsCategory = require('./../../model/product_Category')
 exports.getProductCategory = (req, res) => {
     productsCategory.find().then(data => {
         // res.status(200).send({data,status:200})
-        // res.render("admin/category")
-        res.send({data})
+        res.render("admin/category")
+        // res.send({data})
 
     })
 }
@@ -36,13 +36,11 @@ exports.postProductcategory = (req, res) =>{
 
 // Get all categories 
 
-// exports.getProductCategory = (req, res) => {
-//     productsCategory.find().then(data => {
-//         res.status(200).send({data,status:200})
-//         // res.render("admin/category")
-
-//     })
-// }
+exports.getAllProductCategory = (req, res) => {
+    productsCategory.find().then(data => {
+        res.status(200).send({data,status:200})
+    })
+}
 
 
 // API for product and category detail

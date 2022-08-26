@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Sign up Page</title>
+  <link rel="stylesheet" href="./../../public/login-page-with-background-image/style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body class="bg-slate-800">
+<!-- partial:index.partial.html -->
+<div id="bg"></div>
+
+<form action="" method="POST" class="bg-gray-lighter flex flex-col gap-5 justify-center items-center min-h-screen ">
+    <div class="form-field" >
+        <input class="text-sm p-2 " type="name" placeholder="name" name="name" required/>
+      </div>
+  <div class="form-field">
+    <input class="text-sm p-2 " type="email" placeholder="Email " name="email" required/>
+  </div>
+  
+  <div class="form-field">
+    <input class="text-sm p-2 " type="password" placeholder="Password" name="password" required/></div>
+
+   <div class="form-field">
+    <input class="text-sm p-2 " type="isRole" placeholder="role" name= "role" required/>
+
+  <div class="form-field flex gap-5 ">
+    <button type="submit" class="mt-3 bg-blue-500 text-white w-20 h-8 rounded-md hover:bg-blue-600 active:bg-blue-700">Sign Up</button>
+    <a class="text-white mt-3" href="login">Login</a>
+  </div>
+
+</form>
+<script>
+    // $(document).ready(function(){
+    //     $("#show").click(function(){
+    //         const name = $("#name").val();
+    //         const email = $("#email").val();
+    //         const password = $("#password").val();
+    //         const role = $("#role").val();
+    //         $(this).append(`<p>${name} ${email} ${password} ${role}</p>`);
+    //     })
+    // })
+</script>
+  
+</body>
+</html>

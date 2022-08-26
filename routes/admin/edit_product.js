@@ -9,8 +9,7 @@ const editproductController = require('./../../controller/admin/edit_product');
 //delete product controller
 const deleteproductController = require('./../../controller/admin/delete_product');
 
-//login controller
-const loginController = require('./../../controller/auth/login_auth');
+
 
 //category controller
 const categoryController = require('./../../controller/admin/product_Category')
@@ -27,10 +26,7 @@ router.post("/edit-product/:id",editproductController.updateProductDetails)
 router.get('/delete/:id',deleteproductController.deleteProduct)
 
 
-//login router 
-router.get('/login',loginController.getLogin);
-router.post('/login',loginController.postLogin);
-
+router.get('/', categoryController.getAllProductCategory);
 
 //controller router
 router.get('/sCategory',categoryController.getProductCategory)
