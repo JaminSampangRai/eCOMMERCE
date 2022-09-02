@@ -78,6 +78,14 @@ app.use("/user", userAuth)
 
 app.use(adminSeeder)
 
+// app.post('/api/multiply', (req, res)=>{
+//     // res.send({product:parseInt(req.body.numOne)*parseInt(req.body.numTwo)})
+//     res.send("hello")
+// })
+
+const multipleRoute = require("./routes/api/multiple")
+app.use(multipleRoute)
+
 app.listen(3001, () => {
     console.log(`App is listening on port ${config.PORT}`);
 });

@@ -38,25 +38,36 @@ exports.postLogin = (req,res) => {
     //     res.redirect("login")
     //     return
     // }
+    console.log(req.body);
     User.findOne({
         email: req.body.email
     })
     .then(user => {
         if(user) {
-            bcrypt.compareSync(req.body.password, user.password, (err, match) => {
+            bcrypt.compare(req.body.password, user.password, (err, match) => {
                 if (err) {
                     console.log("something is wrong");
+                    //for API
+                    // res.send({message: "something is wrong", status:400})
+                    
+                    res.redirect("/user/login")
                 }
-                if (match == true) {
-                    session = req.session;
-                    session.email = req.body.email;
+                if (match) {
+                    req.session.email = req.body.email;
+                    //for API
+                    // res.send({message: "Succesfully logged in", status:200})
                     res.redirect('/admin/add-product')
                 } else {
                     console.log("Credential does not match")
+                    res.redirect("/user/login")
+                    //for API
+                    // res.send({message: "credentials did not match", status:400})
                 }  
             })
         } else {
             console.log("no user found");
+            //for API
+            // res.send({message: "no user found", status:400})
         }
     })
     .catch(err => {
